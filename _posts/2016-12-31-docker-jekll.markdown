@@ -72,7 +72,7 @@ docker 검색 하면 많이 나온다. 여기서 따로 설명은 안하겠다.
 
   3. Docker Quickstart Terminal 실행  
 
-  ![docker 시작화면]({{ site.url }}/downloads/dockerinit.png)
+  ![docker 시작화면]({{ site.url }}/downloads/dockerinit.PNG)
 
   * 위와 같은 화면이 나오면 정상적으로 설치가 완료된것이다.
   * 다음 명령어를 입력 해보자.
@@ -81,15 +81,16 @@ docker 검색 하면 많이 나온다. 여기서 따로 설명은 안하겠다.
     >*docker 옵션 중 하나인데 외부 저장소와 연결이 가능 하다.   
     나는 윈도우에서 atom에디터와 연결 하기 위해서 윈도우 디렉토리와 도커내부 디렉토리를 연결 했다.  
     윈도우에서 디렉토리 만들시 권한을 조정해줘야 하고 '//' 두개로 시작 한다는 것도 잊지 말자.*
-  ~~~
+  ```
   docker pull jekyll/jekyll  
   docker run -i -t -p4000:4000 -v //c/Users/jekyll:/srv/jekyll –name jekyll jekyll/jekyll /bin/bash  
-  ~~~
+  ```
 
   * docker 종료후 다시 시작 할 경우(docker stop jekyll)
   > docker 사용법을 기본적으로 알고 있다는 전제하에서 작성 되었다. 그러므로 다소 이해가 안되는 부분이 있을 수도 있다.  
   - 여기서 주의 할 점음 jekyll serve 실행 할때 jekyll 테마가 설치된 곳에서 시작을 해야 동작 된다.   
-  - jekyll serve 실행 후 글 을 바로 확인 하기 위헤서 jekyll serve '--watch' 명령어를 사용 하기도 하는데   적용이 안될시 '--force_polling'을 사용하도록 하자.
+  - jekyll serve 실행 후 글 을 바로 확인 하기 위헤서 jekyll serve '--watch' 명령어를 사용 하기도 하는데   적용이 안될시 '--force_polling'을 사용하도록 하자.   
+  
   ```
   docker start jekyll   
   docker exec jekyll sh -c "cd /srv/jekyll/arrange2p.github.io && jekyll serve --force_polling"
